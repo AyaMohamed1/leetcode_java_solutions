@@ -1,0 +1,25 @@
+class Solution {
+   public  String longestCommonPrefix(String[] strs) {
+	        String prefix = "", shortestStr = strs[shortestStringIndex(strs)];
+	        boolean found = true;
+	        for(int j = 0; j <shortestStr.length(); j++) {
+	        	for(int i = 0; i < strs.length; i++) {
+	        		if(shortestStr.charAt(j) != strs[i].charAt(j))
+	        			found = false;
+	        	}
+	        	if(found == true)
+	        		prefix += shortestStr.charAt(j);
+	        }
+	        return prefix;
+	    }
+	 public  int shortestStringIndex(String[] strs) {
+		 int idx = 0, min = 10000000;
+		 for(int i = 0; i < strs.length; i++) {
+			 if(strs[i].length() < min) {
+				 min = strs[i].length();
+				 idx = i;
+			 }
+		 }
+		 return idx;
+	 }
+}
