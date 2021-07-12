@@ -1,0 +1,15 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        Set<Integer> distinctNumbers = new HashSet<Integer>();
+		for(int i = 0; i < nums.length; i++) {
+			if(distinctNumbers.contains(nums[i]))
+				distinctNumbers.remove(nums[i]);
+			else
+				distinctNumbers.add(nums[i]);
+				
+		}
+		Integer list[] = new Integer[distinctNumbers.size()];
+		distinctNumbers.toArray(list);
+	    return list[0];
+    }
+}
