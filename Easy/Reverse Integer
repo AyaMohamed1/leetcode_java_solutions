@@ -1,0 +1,30 @@
+class Solution {
+    public int reverse(int x) {
+       int num = 0;
+        String reversed = "";
+        boolean negative = false;
+        if(x == 0)
+        	return num;
+        else {
+        	 if(x < 0) {
+             	negative = true;
+             	x *= -1;
+             }
+             
+             while(x != 0) {
+             	reversed += x % 10;
+             	x /= 10;
+             }
+             try {
+            	 num = Integer.parseInt(reversed);
+            	 }
+             catch(NumberFormatException exp) {
+            	 num = 0;
+             }
+             
+             if(negative)
+             	num *= -1;      
+             return num;
+        }
+    }
+}
