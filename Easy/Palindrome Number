@@ -1,0 +1,29 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+         int num = 0, orginal = x;
+        String reversed = "";
+        if(x == 0)
+        	return true;
+        
+        else if(x < 0)
+        	return false;
+        
+        else {
+             while(x != 0) {
+             	reversed += x % 10;
+             	x /= 10;
+             }
+             try {
+            	 num = Integer.parseInt(reversed);
+            	 }
+             catch(NumberFormatException exp) {
+            	 num = 0;
+             }
+            
+             if(orginal == num)
+            	 return true;
+             else
+            	 return false;
+        }
+    }
+}
